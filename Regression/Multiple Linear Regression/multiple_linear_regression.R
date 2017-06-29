@@ -1,6 +1,6 @@
 # Multiple Linear Regression
 
-# Importing the dataset
+#dataset
 dataset = read.csv('50_Startups.csv')
 
 # Encoding categorical data
@@ -8,7 +8,7 @@ dataset$State = factor(dataset$State,
                        levels = c('New York', 'California', 'Florida'),
                        labels = c(1, 2, 3))
 
-# Splitting the dataset into the Training set and Test set
+#Training set and Test set
 # install.packages('caTools')
 library(caTools)
 set.seed(123)
