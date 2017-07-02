@@ -1,6 +1,6 @@
-# Decision Tree Regression
+# Decision Tree Regression done in R language
 
-# Importing the dataset
+# DataSet
 dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
@@ -10,10 +10,10 @@ regressor = rpart(formula = Salary ~ .,
                   data = dataset,
                   control = rpart.control(minsplit = 1))
 
-# Predicting a new result with Decision Tree Regression
+# Prediction using Decision Tree Regression
 y_pred = predict(regressor, data.frame(Level = 6.5))
 
-# Visualising the Decision Tree with better resolution
+# Visualisation and plotting
 # install.packages('ggplot2')
 library(ggplot2)
 x_grid = seq(min(dataset$Level), max(dataset$Level), 0.01)
