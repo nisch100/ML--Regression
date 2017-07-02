@@ -1,16 +1,16 @@
-# Decision Tree Regression
+# Decision Tree Regression written in Python
 
-# Importing the libraries
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Importing the dataset
+# Dataset
 dataset = pd.read_csv('Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
 
-# Splitting the dataset into the Training set and Test set
+# Training set and Test set
 """from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)"""
 
@@ -27,10 +27,10 @@ from sklearn.tree import DecisionTreeRegressor
 regressor = DecisionTreeRegressor(random_state = 0)
 regressor.fit(X, y)
 
-# Predicting a new result
+# Prediction
 y_pred = regressor.predict(6.5)
 
-# Visualising the Decision Tree Regression results (higher resolution)
+# Visualisation and plotting
 X_grid = np.arange(min(X), max(X), 0.01)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, y, color = 'red')
